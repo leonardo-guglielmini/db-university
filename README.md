@@ -14,10 +14,12 @@ FROM `courses`
 WHERE `cfu` > '10';
 ```
 
-###
+### Selezionare tutti gli studenti che hanno più di 30 anni
 
 ```SQL
-
+SELECT *
+FROM `students`
+WHERE timestampdiff(YEAR, date_of_birth, CURDATE() ) > 30;
 ```
 
 ###
