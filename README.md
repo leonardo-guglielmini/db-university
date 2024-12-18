@@ -76,8 +76,16 @@ SET office_address = 126
 WHERE name = 'Pietro' AND surname = 'Rizzo' AND id = 58;
 ```
 
-###
+### Eliminare dalla tabella studenti il record creato precedentemente al punto 9
 
 ```SQL
+DELETE FROM `students`
+WHERE name = 'leonardo' AND surname = 'guglielmini';
+```
 
+### Eliminare dalla tabella studenti il record creato precedentemente al punto 9 ( utilizzando un valore incrementale)
+
+```SQL
+DELETE FROM students
+WHERE registration_number = (SELECT last_registration_number FROM (SELECT MAX(registration_number) AS last_registration_number FROM students) AS sub);
 ```
