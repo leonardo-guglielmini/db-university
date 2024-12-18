@@ -61,16 +61,19 @@ FROM `teachers`
 WHERE phone IS NULL;
 ```
 
-###
+### Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo degree_id, inserire un valore casuale)
 
 ```SQL
-
+INSERT INTO students (degree_id, name, surname, date_of_birth, fiscal_code, enrolment_date, registration_number, email)
+VALUES(33, 'Leonardo','Guglielmini','1998-12-25','GGLLRD98T25B034P','2021-09-06', (SELECT MAX(registration_number)+1 FROM students AS temp),'leonardo.guglielmini@email.it');
 ```
 
-###
+### Cambiare il numero dell’ufficio del professor Pietro Rizzo in 126
 
 ```SQL
-
+UPDATE `teachers`
+SET office_address = 126
+WHERE name = 'Pietro' AND surname = 'Rizzo' AND id = 58;
 ```
 
 ###
