@@ -25,7 +25,9 @@ WHERE timestampdiff(YEAR, date_of_birth, CURDATE() ) > 30;
 ###
 
 ```SQL
-
+SELECT *
+FROM `courses`
+WHERE year = 1 AND period = 'I semestre';
 ```
 
 ###
