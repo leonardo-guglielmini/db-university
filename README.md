@@ -46,10 +46,11 @@ FROM `degrees`
 WHERE level = 'magistrale';
 ```
 
-###
+### Da quanti dipartimenti è composta l'università? (12)
 
 ```SQL
-
+SELECT COUNT(id) AS total_departments
+FROM `departments`;
 ```
 
 ###
