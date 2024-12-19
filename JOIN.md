@@ -12,7 +12,11 @@ ORDER BY surname ASC;
 ### Selezionare tutti i Corsi di Laurea Magistrale del Dipartimento di Neuroscienze
 
 ```SQL
-
+SELECT `degrees`.name as degree_name, `degrees`.level, `departments`.name as department_name
+FROM `degrees`
+JOIN `departments`
+ON `degrees`.department_id = `departments`.id
+WHERE `departments`.name = 'dipartimento di neuroscienze' AND `degrees`.level LIKE 'magistrale';
 ```
 
 ### Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
