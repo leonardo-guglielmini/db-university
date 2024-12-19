@@ -19,7 +19,7 @@ ORDER BY office_address ASC;
 
 ```SQL
 SELECT AVG(vote) as average, exam_id
-FROM exam_student
+FROM `exam_student`
 GROUP BY exam_id
 ORDER BY average DESC;
 ```
@@ -27,5 +27,8 @@ ORDER BY average DESC;
 ### Contare quanti corsi di laurea ci sono per ogni dipartimento
 
 ```SQL
-
+SELECT COUNT(id) as total_degree_courses, department_id
+FROM `degrees`
+GROUP BY department_id
+ORDER BY total_degree_courses DESC;
 ```
