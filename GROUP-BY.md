@@ -18,7 +18,10 @@ ORDER BY office_address ASC;
 ### Calcolare la media dei voti di ogni appello d'esame
 
 ```SQL
-
+SELECT AVG(vote) as average, exam_id
+FROM exam_student
+GROUP BY exam_id
+ORDER BY average DESC;
 ```
 
 ### Contare quanti corsi di laurea ci sono per ogni dipartimento
