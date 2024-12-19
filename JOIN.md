@@ -35,7 +35,13 @@ ORDER BY course_name ASC;
 ### Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 
 ```SQL
-
+SELECT `s`.name AS student_name, `s`.surname AS student_surname, `deg`.name AS degree_name, `dep`.name AS department_name
+FROM `students` AS `s`
+JOIN `degrees` AS `deg`
+ON `s`.degree_id = `deg`.id
+JOIN `departments` AS `dep`
+ON `deg`.department_id = `dep`.id
+ORDER BY student_surname ASC, student_name ASC;
 ```
 
 ### Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
